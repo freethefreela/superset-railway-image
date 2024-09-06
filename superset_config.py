@@ -8,15 +8,17 @@ PYTHONPATH = os.environ.get("PYTHONPATH")
 RATELIMIT_STORAGE_URI = os.environ.get("SUPERSET_CACHE_REDIS_URL")
 SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 SUPERSET_CACHE_REDIS_URL = os.environ.get("SUPERSET_CACHE_REDIS_URL")
+SUPERSET_LOAD_EXAMPLES = os.environ.get("SUPERSET_LOAD_EXAMPLES")
 
 REDIS_HOST = os.environ.get("REDIS_HOST")
 REDIS_PORT = os.environ.get("REDIS_PORT")
 REDIS_URL = os.environ.get("REDIS_URL")
 
 SUPERSET_ENV = os.environ.get("SUPERSET_ENV")
-SUPERSET_SECRET_KEY = os.environ.get("SUPERSET_SECRET_KEY")
+SECRET_KEY = os.environ.get("SUPERSET_SECRET_KEY")
 SUPERSET_PORT = os.environ.get("SUPERSET_PORT")
 SUPERSET_CACHE_REDIS_URL = os.environ.get("SUPERSET_CACHE_REDIS_URL")
+ENABLE_PROXY_FIX = True
 
 if not REDIS_HOST:
     logger.error("REDIS_HOST is not set")
@@ -34,7 +36,7 @@ if not SUPERSET_ENV:
     logger.error("SUPERSET_ENV is not set")
     exit(1)
 
-if not SUPERSET_SECRET_KEY:
+if not SECRET_KEY:
     logger.error("SUPERSET_SECRET_KEY is not set")
     exit(1)
 
